@@ -35,6 +35,8 @@ stdenv.mkDerivation {
   env.MESON_INSTALL_PREFIX = placeholder "out";
   mesonFlags = [
     (lib.mesonBool "enable-systemd" true)
+    (lib.mesonOption "localstatedir" "/run")
+    (lib.mesonOption "runtime_subdir" "drm-lease-manager")
   ];
 
   postPatch = "sed -i /meson.add_install_script/d meson.build";

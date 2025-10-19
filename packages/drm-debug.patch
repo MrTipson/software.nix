@@ -1,0 +1,13 @@
+diff --git a/drm-lease-manager/lease-server.c b/drm-lease-manager/lease-server.c
+index 8820305..6db9dc8 100644
+--- a/drm-lease-manager/lease-server.c
++++ b/drm-lease-manager/lease-server.c
+@@ -154,7 +154,7 @@ static int create_socket_lock(struct sockaddr_un *addr)
+ 		       S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP);
+ 
+ 	if (lock_fd < 0) {
+-		ERROR_LOG("Cannot access runtime directory\n");
++		ERROR_LOG("Cannot access runtime directory %s\n", lockfile);
+ 		return -1;
+ 	}
+ 
