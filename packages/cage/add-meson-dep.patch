@@ -1,0 +1,20 @@
+diff --git a/meson.build b/meson.build
+index f8ccd76..27d24c0 100644
+--- a/meson.build
++++ b/meson.build
+@@ -35,6 +35,7 @@ if is_freebsd
+   )
+ endif
+ 
++libdlmclient   = dependency('libdlmclient')
+ wlroots        = dependency('wlroots-0.19', fallback: ['wlroots', 'wlroots'])
+ wayland_protos = dependency('wayland-protocols', version: '>=1.14')
+ wayland_server = dependency('wayland-server')
+@@ -140,6 +141,7 @@ executable(
+   meson.project_name(),
+   cage_sources + cage_headers,
+   dependencies: [
++    libdlmclient,
+     server_protos,
+     wayland_server,
+     wlroots,

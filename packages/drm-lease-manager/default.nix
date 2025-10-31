@@ -29,7 +29,7 @@ stdenv.mkDerivation {
   buildInputs = [
     libdrm
     systemd
-    (callPackage ./libtoml.nix { })
+    (callPackage ../libtoml { })
   ];
 
   env.MESON_INSTALL_PREFIX = placeholder "out";

@@ -1,0 +1,15 @@
+diff --git a/xwayland/xwm.c b/xwayland/xwm.c
+index a82e8b14..7cea3709 100644
+--- a/xwayland/xwm.c
++++ b/xwayland/xwm.c
+@@ -590,8 +590,8 @@ static void xwayland_surface_destroy(struct wlr_xwayland_surface *xsurface) {
+ 	assert(wl_list_empty(&xsurface->events.request_above.listener_list));
+ 	assert(wl_list_empty(&xsurface->events.request_below.listener_list));
+ 	assert(wl_list_empty(&xsurface->events.request_demands_attention.listener_list));
+-	assert(wl_list_empty(&xsurface->events.associate.listener_list));
+-	assert(wl_list_empty(&xsurface->events.dissociate.listener_list));
++	//assert(wl_list_empty(&xsurface->events.associate.listener_list));
++	//assert(wl_list_empty(&xsurface->events.dissociate.listener_list));
+ 	assert(wl_list_empty(&xsurface->events.set_class.listener_list));
+ 	assert(wl_list_empty(&xsurface->events.set_role.listener_list));
+ 	assert(wl_list_empty(&xsurface->events.set_title.listener_list));

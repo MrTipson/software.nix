@@ -1,5 +1,5 @@
 {
-  description = "MrTipson's packages and overlays";
+  description = "MrTipson's packages";
 
   outputs =
     { nixpkgs, ... }@inputs:
@@ -8,6 +8,5 @@
     in
     {
       packages = forAllSystems (system: import ./packages (nixpkgs.legacyPackages.${system}));
-      overlays = import ./overlays;
     };
 }
