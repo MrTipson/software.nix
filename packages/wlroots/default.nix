@@ -7,13 +7,14 @@
 let
   drm-lease-manager = callPackage ../drm-lease-manager { };
   wlr-override = old: {
-    buildInputs = old.buildInputs ++ [ drm-lease-manager ];
+    propagatedBuildInputs = (old.propagatedBuildInputs or [ ]) ++ [ drm-lease-manager ];
     patches = old.patches ++ [
       #./multiseat.patch
       (fetchpatch {
         url = "https://raw.githubusercontent.com/garlett/multiseat/7b6e69cc5184d90a1d0fab043ccbf3d1da30cf6d/multiseat.patch";
         hash = "sha256-whuEKY5xyxMMV6HvMWxZ6UcRFK+MELfV7GcrNPSUlgc=";
       })
+      ./add-meson-requires.patch
       ./fix-crash.patch
     ];
   };

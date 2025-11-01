@@ -1,9 +1,8 @@
 { callPackage, ... }:
 {
-  packages = {
-    cage = callPackage ./cage { };
-    drm-lease-manager = callPackage ./drm-lease-manager { };
-    libtoml = callPackage ./libtoml { };
-    inherit (callPackage ./wlroots { }) wlroots wlroots_0_19;
-  };
+  cage = callPackage ./cage { };
+  drm-lease-manager = callPackage ./drm-lease-manager { };
+  libtoml = callPackage ./libtoml { };
+  inherit (callPackage ./sway { }) sway sway-unwrapped;
+  inherit (callPackage ./wlroots { }) wlroots wlroots_0_19;
 }

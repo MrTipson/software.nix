@@ -1,0 +1,12 @@
+diff --git a/meson.build b/meson.build
+index de5a620c..87618c46 100644
+--- a/meson.build
++++ b/meson.build
+@@ -81,6 +81,7 @@ math = cc.find_library('m')
+ rt = cc.find_library('rt')
+ xcb_icccm = wlroots_features['xwayland'] ? dependency('xcb-icccm') : null_dep
+ threads = dependency('threads') # for pthread_setschedparam and pthread_atfork
++libdlmclient = dependency('libdlmclient')
+ 
+ if get_option('sd-bus-provider') == 'auto'
+ 	if not get_option('tray').disabled()
