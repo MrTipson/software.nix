@@ -1,5 +1,5 @@
 {
-  description = "MrTipson's packages";
+  description = "Provides multiseat packages";
 
   outputs =
     { nixpkgs, ... }@inputs:
